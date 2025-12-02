@@ -1,0 +1,196 @@
+/* Reset-ish */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Page background */
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #f1f5f9; /* light gray/blue */
+  color: #334155;
+}
+
+/* Main layout wrapper */
+.page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2.5rem 1rem;
+}
+
+/* --- CHARTER PANEL (Mint Gradient Header Style) --- */
+.charter-panel {
+  width: 100%;
+  max-width: 1200px;
+  padding: 2rem 2.5rem 2.5rem;
+
+  background: linear-gradient(135deg, #e9fbf7, #d8f5ee);
+  border-radius: 28px;
+  border: 1px solid #cbeee5;
+
+  box-shadow: 0 20px 40px rgba(15, 118, 110, 0.08);
+}
+
+/* Panel headings */
+.panel-title {
+  margin: 0 0 0.25rem;
+  font-size: 1.9rem;
+  color: #0f766e; /* teal */
+}
+
+.panel-subtitle {
+  margin: 0 0 2rem;
+  font-size: 0.98rem;
+  color: #64748b;
+}
+
+/* --- GRID OF CARDS --- */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.75rem;
+}
+
+/* Card container */
+.card-button {
+  background: #ffffff;
+  padding: 1.5rem 1.75rem;
+  border-radius: 20px;
+  border: 1px solid #e2f3ef;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.05);
+
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+/* Hover effect on card */
+.card-button:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 36px rgba(15, 23, 42, 0.16);
+  border-color: #0f766e;
+}
+
+/* Card header (label + title) */
+.card-header {
+  margin-bottom: 0.6rem;
+}
+
+.card-label {
+  display: block;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #94a3b8;
+  margin-bottom: 0.15rem;
+}
+
+.card-title {
+  margin: 0;
+  font-size: 1.15rem;
+  color: #0f766e;
+}
+
+/* Card text */
+.card-text {
+  margin: 0.25rem 0 0.8rem;
+  font-size: 0.95rem;
+  color: #475569;
+}
+
+/* Card list */
+.card-list {
+  margin: 0 0 0.9rem;
+  padding-left: 1.25rem;
+  font-size: 0.95rem;
+  color: #475569;
+}
+
+.card-list li + li {
+  margin-top: 0.25rem;
+}
+
+/* --- DROPDOWN STYLES (Pill-style toggle button) --- */
+.dropdown {
+  position: relative;
+  width: 100%;
+  margin-top: 0.75rem;
+}
+
+/* Pill-style Points button */
+.points-pill {
+  display: inline-block;
+  border-radius: 999px;
+  background: #0f766e;
+  color: #ffffff;
+  font-size: 0.88rem;
+  font-weight: 600;
+  padding: 0.45rem 1.1rem;
+  border: none;
+}
+
+/* Toggle button with full width + pill style */
+.dropdown-toggle {
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+
+  box-shadow: 0 4px 10px rgba(15, 23, 42, 0.18);
+}
+
+.dropdown-toggle:hover {
+  background: #0d5f5a;
+}
+
+/* Dropdown menu (HIDDEN BY DEFAULT) */
+.dropdown-menu {
+  display: none;              /* VERY IMPORTANT — keeps it collapsed */
+  position: relative;
+  margin-top: 0.7rem;
+
+  background: #ffffff;
+  border: 1px solid #d8f3ec;
+  border-radius: 12px;
+
+  padding: 0.5rem 0;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.16);
+
+  animation: dropFade 0.2s ease;
+}
+
+/* Dropdown items (links) */
+.dropdown-item {
+  display: block;
+  padding: 0.6rem 1rem;
+  text-decoration: none;
+  color: #0f4a46;
+  font-size: 0.9rem;
+}
+
+.dropdown-item:hover {
+  background: #f0fdfa;
+  color: #0f766e;
+}
+
+/* Dropdown fade-in animation */
+@keyframes dropFade {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .charter-panel {
+    padding: 1.5rem 1.25rem 2rem;
+    border-radius: 22px;
+  }
+}
